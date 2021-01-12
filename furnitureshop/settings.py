@@ -131,7 +131,7 @@ STATIC_ROOT = 'static/'
 CART_SESSION_ID = 'cart'
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ['seitakhunova@gmail.com']
-EMAIL_HOST_PASSWORD = '26072018AtayRoza!'
+EMAIL_HOST_USER = ['aaaaa@gmail.com']
+EMAIL_HOST_PASSWORD = '111111'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
