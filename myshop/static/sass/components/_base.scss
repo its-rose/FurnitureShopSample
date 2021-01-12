@@ -1,0 +1,75 @@
+//1.2 Normalize
+body {
+    padding: 0px;
+    font-weight: 400;
+    margin: 0px;
+    position: relative;
+    @include transition(all 0.4s ease);
+    &.modal-open{
+        overflow: visible;
+        padding-right: 0 !important;
+    }
+}
+
+input,
+textarea,
+.form-control,
+button,
+.btn {
+    outline: none;
+}
+a {
+    color: #2b2b2b;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        color: #80b435;
+        text-decoration: none;
+        outline: none;
+    }
+}
+@keyframes myAnimation {
+    from {
+        right: 50px;
+    }
+    to {
+        right: 0px;
+    }
+}
+ol, ul{
+    list-style: none;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+
+/* Firefox */
+@-moz-keyframes myAnimation {
+    from {
+        right: 50px;
+    }
+    to {
+        right: 0px;
+    }
+}
+
+/* Chrome */
+@-webkit-keyframes myAnimation {
+    from {
+        right: 50px;
+    }
+    to {
+        right: 0px;
+    }
+}
+
+/* Opera */
+@-o-keyframes myAnimation {
+    from {
+        right: 50px;
+    }
+    to {
+        right: 0px;
+    }
+}

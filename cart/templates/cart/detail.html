@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Stylish Home - Your Cart</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+    <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Pe-icon-7-stroke.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="shortcut icon" type="text/css" href="{% static 'images/favicon.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.min.css' %}">
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="cart-page">
+    <!-- HEADER -->
+    <header id="main-header" class="header-default hidden-sm hidden-xs">
+        <div class="container">
+            <div class="inner">
+                <div class="logo">
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h2>Stylish Home</h2></a>
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h7>  Furniture for Your Home</h7></a>
+                </div>
+                <div class="main-menu">
+                    <nav class="navbar collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="level1 hassub megamenu-default">
+                                <a href="{% url 'shop' %}">Shop</a>
+                            </li>
+                            <li class="level1">
+                                <a href="{% url 'about_us' %}">About</a>
+                            </li>
+                            <li class="level1 megamenu-fullwidth">
+                                <a href="{% url 'news' %}">News</a>
+                            </li>
+                            <li class="level1">
+                                <a href="{% url 'contact_us' %}">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER MOBILE-->
+    <header id="header_mobile" class="header-mobile-default hidden-lg hidden-md">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo text-center">
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h2>Stylish Home</h2></a>
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h7>  Furniture for Your Home</h7></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="header-main">
+                        <div class="main-left">
+                            <button data-toggle="offcanvas" class="btn btn-offcanvas btn-toggle-canvas offcanvas" type="button">
+                               <i class="ion ion-android-menu"></i>
+                            </button>
+                        </div>
+                        <div class="main-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END-HEADER -->
+    <!-- BREADCRUMB-->
+    <section id="breadcrumb" class="breadcrumb-v2">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% block content %}
+    <section id="main-content">
+        <div class="container">
+            <div class="inner row">
+                <div class="content-left col-md-8 col-sm-8">
+                    <div class="title-heading">
+                        <span>Shopping Cart</span>
+                    </div>
+                    <div class="content-product-list">
+                        {% for item in cart %}
+                        {% with product=item.product %}
+                        <div class="product-block">
+                            <div class="product-image">
+                                <div class="image">
+                                    <img src="{{ product.image.url }}" alt="" class="img-responsive">
+                                </div>
+                                <div class="product-name">
+                                    <span>Name: {{ product.name }}</span>
+                                    <div class="quantity">
+                                       Quantity: <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                                        {{ item.update_quantity_form.quantity }}
+                                        {{ item.update_quantity_form.update }}
+                                        <input type="submit" value="Save"> {% csrf_token %}
+                                    </form>
+                                    </div>
+                                    <div class="product-price">
+                                <div class="price">Price per item: $ {{ item.price }}</div>
+                            </div>
+
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <div class="price">Total for item: $ {{ item.total_price }}</div>
+                                <a href="{% url 'cart:cart_remove' product.id %}"><i class="pe-7s-close"></i></a>
+                            </div>
+                        </div>
+                        {% endwith %}
+                            {% endfor %}
+                        <div class="action-cart-page">
+                            <div class="continue-shopping btn-outline btn-lage"><a href="{% url 'shop' %}">Continue Shopping</a></div>
+                            <div class="update-cart btn-outline btn-lage"><a href="">Update Cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right col-md-4 col-sm-4">
+                    <div class="widget widget-cart-totals">
+                        <div class="title-heading">
+                            <span>Cart Totals</span>
+                        </div>
+                        <div class="form-cart-totals">
+                            <div class="content-bottom">
+                                <div class="total">Total</div>
+                                <span class="price">$ {{ cart.get_total_price }}</span>
+                            </div>
+                        </div>
+                        <div class="proceed-checkout btn-theme btn-lage"><a href="#">Proceed to Checkout</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <!-- Menu offcanvas -->
+    <div id="pbr-off-canvas" class="pbr-off-canvas sidebar-offcanvas hidden-lg hidden-md">
+        <div class="pbr-off-canvas-body">
+            <div class="offcanvas-head">
+                <button type="button" class="btn btn-close btn-toggle-canvas" data-toggle="offcanvas">
+                    <i class="pe-7s-close-circle"></i>
+                </button>
+                <span>Menu</span>
+            </div>
+            <nav class="navbar navbar-offcanvas navbar-static">
+                <ul class="nav navbar-nav">
+                    <li class="level1 active hassub">
+                        <a href="{% url 'shop' %}">Shop</a>
+                    </li>
+                    <li class="level1 hassub">
+                        <a href="{% url 'about_us' %}">About</a>
+                    </li>
+                    <li class="level1 hassub">
+                        <a href="{% url 'news' %}">News</a>
+                    </li>
+                    <li class="level1 hassub">
+                        <a href="{% url 'contact_us' %}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Search popup content -->
+    <div id="mymodal" class="modal fade mymodal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span class="pe-7s-close"></span></button>
+
+                <form method="get" class="searchform" action="#">
+                    <div class="pbr-search input-group">
+                        <input name="search" maxlength="40" class="form-control input-large input-search" size="20" placeholder="Search" type="text">
+                        <span class="input-group-addon input-large btn-search">
+                            <input value="" type="submit">
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--SCOLL TOP-->
+    <a href="#" title="sroll" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+    <!--END / SROLL TOP-->
+
+    <!-- LOAD JQUERY -->
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vit-gallery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.appear.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap-select.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.littlelightbox.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDyCxHyc8z9gMA5IlipXpt0c33Ajzqix4"></script>
+    <!-- Custom jQuery -->
+    <script type="text/javascript" src="{% static 'js/function.js' %}"></script>
+</body>
+</html>

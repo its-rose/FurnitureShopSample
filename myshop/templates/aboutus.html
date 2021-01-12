@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stylish Home - About</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+    <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="shortcut icon" type="text/css" href="{% static 'images/favicon.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Pe-icon-7-stroke.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}">
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body class="about-page">
+    <!-- HEADER -->
+    <header id="main-header" class="header-page hidden-sm hidden-xs">
+        <div class="container-fluid">
+            <div class="inner">                
+                <div class="main-menu">
+                    <nav class="navbar collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="level1 hassub megamenu-default">
+                                <a href="{% url 'shop' %}">Shop</a>
+                            </li>
+                            <li class="level1">
+                                <a href="#">About</a>
+                            </li>
+                            <li class="level1 megamenu-fullwidth">
+                                <a href="{% url 'news' %}">News</a>
+                            </li>
+                            <li class="level1">
+                                <a href="{% url 'contact_us' %}">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="logo text-center">
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h2>Stylish Home</h2></a>
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h7>  Furniture for Your Home</h7></a>
+                </div>
+                <div class="header-right">
+                    
+                    <!-- Start Shopping cart -->
+                    <div id="cart_top">
+                        <div class="shopping-cart">
+                            <a href="{% url 'cart:cart_detail' %}" class="button">
+                                <span class="text-cart">Cart</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Shopping cart -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER MOBILE-->
+    <header id="header_mobile" class="header-mobile-default header-page hidden-lg hidden-md">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo text-center">
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h2>Stylish Home</h2></a>
+                    <a class="logo-default" href="{% url 'home_page' %}" title="logo"><h7>  Furniture for Your Home</h7></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="inner">                
+                    <div class="header-main">
+                        <div class="main-left">
+                            <button data-toggle="offcanvas" class="btn btn-offcanvas btn-toggle-canvas offcanvas" type="button">
+                               <i class="ion ion-android-menu"></i>
+                            </button>  
+                        </div>
+                        <div class="main-right">
+                            <!-- Start Shopping cart -->
+                            <div class="shopping-cart">
+                                <a href="{% url 'cart:cart_detail' %}" class="button">
+                                    <span class="text-cart">Cart</span>
+                                </a>
+                            </div>
+                            <!-- End Shopping cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END-HEADER --> 
+    <section class="banner-header about-us"></section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-top">
+                <div class="row">
+                    <div class="col-md-5">
+                       <div class="post-type">
+                            <div class="inner">
+                                <span>STYLE</span>
+                                <span>CREATIVITY</span>
+                                <span>IDEAS</span>
+                                <span>MODERN</span>
+                                <span>DESIGNERS</span>
+                                <span>HI-TECH</span>
+                                <span>COMFORT</span>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="desc-about">
+                            <div class="title-heading">
+                                Best Furniture for Your Home
+                            </div>
+                            <p>Your home is a canvas that reflects your personality, life experiences, and beliefs.
+                                It’s more than just a place to live, it’s a place of quiet solace and comfort.
+                                Keeping that in mind, it’s crucial that when you select home furniture, it should echo your individuality and preferences.</p>
+                            <p>But why exhaust yourself by visiting brick and mortar stores when you can comfortably choose your favourite furniture online?
+                                At Stylish Home’s online marketplace, you can now buy furniture online with incredible convenience.
+                                Avoid the crowds, inordinate delays, and endless bargaining while selecting the latest furniture design on Stylish Home.
+                                Experiment with a wide variety of furniture pieces designed with modern, contemporary, traditional, minimalist, eclectic, and vintage themes.
+                                With elegant designs and gorgeous colours available on everything ranging from study room furniture to living room furniture,
+                                you will certainly be spoiled for choices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="desc-about">
+                            <div class="title-heading">
+                                All You Need is Here
+                            </div>
+                            <p>Get creative and experiment with home furniture designs that have been uniquely crafted for different areas of the home.
+                                Depending on the specific needs and requirements of each room, select furniture that is apt according to the décor theme and purpose of the room.
+                                Whether it’s bedroom furniture for a cosy bedroom or living room furniture for a spacious living room, Urban Ladder has got it all.
+                                If space is a constraint in your urban apartment, space saving furniture that is innovatively designed to maximise space will be your ideal option.
+                                However, if you’ve got generous space to spare with a gorgeous well-lit patio, outdoor furniture in bold colours will be your best bet.
+                                No matter what your space, there’s something for every need at Stylish home.</p>
+                            <p></p>
+                        </div>                            
+                    </div>
+                    <div class="col-md-6">
+                        <div class="desc-about">
+                            <div class="title-heading">
+                                Our Mission
+                            </div>
+                            <p>Stylish Home’s expansive modern furniture choices will empower your decision-making by giving you a variety of options that will seamlessly fit
+                                within your desired budget and design preferences. With regular furniture sales and exciting offers on exceptional furniture designs,
+                                you can be assured that you will get the right furniture piece perfect your home. So, whether you’re looking for a sleek wooden furniture element
+                                or an ergonomic work from home furniture piece, we promise you will not be disappointed.</p>
+                            <p></p>
+                        </div>                            
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+    <section class="testimonial">
+        <div class="container-fluid">
+            <div class="testimonials-body">
+                <div class="bg-testimonials"></div>
+                <div class="testimonial-content carousel-slide">
+                    <div class="slider-testimonial">
+                        <div class="testimonials-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>Our online furniture site offers you a wide variety of options to choose from.
+                                You can browse many designs, categories, sizes, functionalities and colours, all at your convenience.</p>
+                        </div>
+                        <div class="testimonials-profile">
+                            <h4 class="name">Stylish Home Team</h4>
+                        </div>
+                    </div>
+                    <div class="slider-testimonial">
+                        <div class="testimonials-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>We offer the most optimum combination of aesthetics, variety, dimensions, functionalities for furniture.
+                                From modern to traditional designs, minimal to intricate details, compact to spacious sizes,
+                                we offer practically every type of furniture to match your interior design. </p>
+                        </div>
+                        <div class="testimonials-profile">
+                            <h4 class="name">Stylish Home Team</h4>
+                        </div>
+                    </div>
+                    <div class="slider-testimonial">
+                        <div class="testimonials-quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>Selecting furniture for your home is serious business.
+                                You can then choose from a wide range of wooden furniture in different shapes and colours.
+                                You will also find benefits, features, prices and other essential details about the product listed online.</p>
+                        </div>
+                        <div class="testimonials-profile">
+                            <h4 class="name">Stylish Home Team</h4>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Menu offcanvas -->
+    <div id="pbr-off-canvas" class="pbr-off-canvas sidebar-offcanvas hidden-lg hidden-md">
+        <div class="pbr-off-canvas-body">
+            <div class="offcanvas-head">
+                <button type="button" class="btn btn-close btn-toggle-canvas" data-toggle="offcanvas">
+                    <i class="pe-7s-close-circle"></i> 
+                </button>
+                <span>Menu</span>
+            </div>  
+            <nav class="navbar navbar-offcanvas navbar-static">
+                <ul class="nav navbar-nav">
+                    <li class="level1 active hassub">
+                        <a href="{% url 'shop' %}">Shop</a>
+                    </li>
+                    <li class="level1 hassub">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="level1 hassub">
+                        <a href="{% url 'news' %}">News</a>
+                    </li>
+                    <li class="level1 hassub">
+                        <a href="{% url 'contact_us' %}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Search popup content -->
+    <div id="mymodal" class="modal fade mymodal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span class="pe-7s-close"></span></button>
+            </div>                                
+        </div>
+    </div>
+    <!--SCOLL TOP-->
+    <a href="#" title="sroll" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+    <!--END / SROLL TOP-->
+    <!-- LOAD JQUERY -->
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/vit-gallery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.appear.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap-select.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.littlelightbox.js' %}"></script>
+    <!-- Custom jQuery -->
+    <script type="text/javascript" src="{% static 'js/function.js' %}"></script>
+</body>
+
+</html>

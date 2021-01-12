@@ -1,0 +1,120 @@
+// off-canvas
+// ----------------------------
+.btn-offcanvas{
+    background: transparent;
+    border: 1px solid #ddd;
+}
+#pbr-off-canvas{
+    background: $white;    
+    position: fixed;
+    top: 0;
+    left: -84%;
+    bottom: 0;
+    z-index: 999;
+    @include box-shadow(1px 0px 6px 0px rgba(0,0,0,0.5));
+    @include transition(all 0.3s ease-out);
+    @media (min-width: $screen-xs) and (max-width: $screen-md){
+        width: 50%;
+    }
+    @media (max-width: $screen-xs){
+        width: 80%;
+    }
+    &.active{
+        left: 0;
+    }
+    .offcanvas-head{
+        background: $theme-color;
+        height: 50px;
+        padding: 5px 0;
+        .btn-close{
+            background: transparent;
+            color: $white;
+            font-size: 25px;
+            padding: 0 10px;
+            position: absolute;
+            right: 0;
+        }
+        span{
+            color: $white;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            line-height: 40px;
+            margin-left: 15px;
+        }
+    }
+    .navbar-nav{
+        float: none;
+        margin: 0;
+        li{
+            border-bottom: 1px solid #eee;
+            float: none;
+            padding: 5px 0;
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+}
+.menu-open{
+    &:before{
+        background: rgba(0,0,0,0.5);
+        bottom: 0;
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        @include square(100%);
+    }
+}
+
+@media (min-width: $screen-lg){
+    .product-block{
+        .col-lg-5{
+            width: 20%;
+        }
+    }    
+} 
+
+@media (max-width: $screen-xs){
+    .table-wishlist{
+        border: 1px solid #e5e5e5;
+        thead{
+            display: none !important;
+        }
+        tbody{
+            tr{
+                border-bottom: 1px solid #e5e5e5;
+                > td{
+                    display: block;
+                    &:before{
+                        content: attr(data-title) ": ";
+                        font-weight: 700;
+                        font-size: $font-size-base + 4;
+                        float: left;
+                        margin-right: 15px;
+                    }
+                    &:last-child{                    
+                        margin-bottom: 40px;
+                        &:before{
+                            display: none;
+                        }
+                    }
+                    .btn-theme{
+                        margin: 20px 0;
+                    }
+                }
+            }                 
+        }
+        .product-infor{
+            .product-img{
+                display: none !important;
+            }
+            .product-name{
+                font-size: $font-size-base + 4 !important;
+            }
+        }
+    }
+}

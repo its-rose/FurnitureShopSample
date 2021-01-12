@@ -1,0 +1,23 @@
+// Variables
+// --------------------------------------------------
+$image-theme-path                : '../images/' !default;
+
+// standard colors
+$white		    : #FFF !default;
+$black			: #000 !default;
+$nocolor		: transparent !default;
+
+$font-family-second: 'Roboto Condensed', sans-serif;
+$font-family-three: 'Roboto', sans-serif;
+
+$color-hover:       	$brand-primary;
+$theme-color: 			#80b435 !default;
+$border-color:			#e7e7e7 !default;
+
+/**
+ * Import component variables
+ */
+@import "var/form";
+@import "var/nav";
+@import "var/layout";
+@import "var/element";

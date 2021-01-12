@@ -1,0 +1,161 @@
+//  1.1 Mixin
+@mixin border-radius($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition($transition) {
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin box-shadow($box-shadow) {
+    -moz-box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow;
+    -o-box-shadow: $box-shadow;
+    -ms-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+
+@mixin flex {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+@mixin transform($transform){
+  -webkit-transform: ($transform);
+  -moz-transform: ($transform);
+  -ms-transform: ($transform);
+  -o-transform: ($transform);
+  transform: ($transform);
+}
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+          align-items: $align;
+}
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify-content) {
+  -webkit-justify-content: $justify-content;
+     -moz-justify-content: $justify-content;
+      -ms-justify-content: $justify-content;
+          justify-content: $justify-content;
+            -ms-flex-pack: $justify-content;
+}
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align-items) {
+  -webkit-align-items: $align-items;
+     -moz-align-items: $align-items;
+      -ms-align-items: $align-items;
+          align-items: $align-items;
+}
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+     -moz-align-self: $align;
+      -ms-align-self: $align;
+          align-self: $align;
+}
+
+//== Flexible Layout
+//==========================================
+
+@mixin flexbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+%flexbox {
+    @include flexbox;
+}
+
+@mixin inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+%inline-flex {
+    @include inline-flex;
+}
+
+@mixin grid {
+  display: -webkit-grid;
+  display: -webkit-grid;
+  display: -moz-grid;
+  display: -ms-grid;
+  display: grid;
+}
+
+%grid {
+  @include grid;
+}
+
+//== Style botton
+//==========================================.
+
+@mixin btn-style($btn-background ,$btn-background-hover ,$btn-border-color ,$btn-border-color-hover ,$btn-color ,$btn-color-hover) {
+  a{
+    background: $btn-background;
+    color: $btn-color;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid $btn-border-color;
+    @include border-radius(40px);
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
+      background: $btn-background-hover;
+      color: $btn-color-hover;
+      border: 1px solid $btn-border-color-hover;
+    }
+  }
+  &.btn-small{
+    a{
+      font-size: $font-size-base;
+      padding: 10px 25px;
+    }      
+  }
+  &.btn-medium{
+    a{
+      font-size: $font-size-base + 4;
+      padding: 12px 45px;
+    }      
+  }
+  &.btn-lage{
+    a{
+      font-size: $font-size-base + 4;
+      padding: 15px 60px;
+    }    
+  }
+}
